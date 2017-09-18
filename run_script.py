@@ -9,4 +9,4 @@ else:
     print "mac or iphone?"
     exit(0)
 
-os.system("python ContentFilter.py tmp.txt > output.txt")
+os.system("python ContentFilter.py tmp.txt")

@@ -28,7 +28,7 @@ def getPage(board,index):
 content0,pid = getLastPage("MacShop")
 #content1 = getPage("mobilesales",pid-1)
 
-for k in range(100):
+for k in range(10):
     content = getPage("MacShop",pid-k)
     tmp = content.split("<div class=\"title\">")
     for i in range(1,len(tmp),1):
