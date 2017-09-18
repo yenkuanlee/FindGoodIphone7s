@@ -13,14 +13,19 @@ def getPrice(Kurl):
             #url= 'https://www.ptt.cc/bbs/' + board + '/index.html',
             #cookies={'over18': '1'}
         ).content.decode('utf-8')
+        Time = "NO TIME"
+        try:
+            Time = content.split("時間</span><span class=\"article-meta-value\">")[1].split("<")[0]
+        except:
+            pass
         try:
                 price = content.split("[交易價格]：")[1].split("\n")[0]
                 price = price.replace(",","")
                 price = price.replace("，","")
-                return int(re.search(r'\d+', price).group())
+                return int(re.search(r'\d+', price).group()),Time
                 #return price
         except:
-                return -1
+                return -1,Time
 
 f = open(sys.argv[1],'r')
 while True:
@@ -28,7 +33,7 @@ while True:
     if not line:
         break
     tmp = line.split("\t")
-    price = getPrice(tmp[0])
+    price,Time = getPrice(tmp[0])
     if price < 30000:
-        print line+str(price)+"\n"
+        print Time+"\t"+line+str(price)+"\n"
 #print getPrice("https://www.ptt.cc/bbs/MacShop/M.1505715031.A.654.html")
