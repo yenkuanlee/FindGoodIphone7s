@@ -7,9 +7,10 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-def send_email(user, pwd, recipient, subject, body):
+def send_email(recipient, subject, body):
     import smtplib
-
+    user = ""
+    pwd = ""
     gmail_user = user
     gmail_pwd = pwd
     FROM = user
@@ -81,7 +82,8 @@ while True:
         try:
             title = line.split("\t")[1].split("\n")[0]
             Iurl = line.split("\t")[0]
-            send_email("washwash5566@gmail.com","password","yenkuanlee@gmail.com",title,Time+"\n\n"+title+"\n\n"+Iurl+"\n\n"+str(price)+" 元"+"\n\n")
+            send_email("yenkuanlee@gmail.com",title,Time+"\n\n"+title+"\n\n"+Iurl+"\n\n"+str(price)+" 元"+"\n\n")
+            send_email("mnbm03409@gmail.com",title,Time+"\n\n"+title+"\n\n"+Iurl+"\n\n"+str(price)+" 元"+"\n\n")
         except:
             pass
         print Time+"\t"+line+str(price)+"\n"

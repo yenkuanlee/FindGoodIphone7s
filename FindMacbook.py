@@ -36,7 +36,7 @@ for k in range(10):
             tmpp = tmp[i].split("<a href=\"")[1].split("</a>")[0].split("\">")
             lower_name = tmpp[1].lower()
             #if ("iphone" in lower_name or "i phone" in lower_name) and "7" in lower_name and "s" in lower_name and "徵/" not in lower_name and "售出" not in lower_name and "換/" not in lower_name and "北" in lower_name:
-            if ("macbook" in lower_name or "mac book" in lower_name) and "11" not in lower_name and "pro" not in lower_name and "[收購]" not in lower_name and "售出" not in lower_name and "換/" not in lower_name and "北" in lower_name:
+            if ("macbook" in lower_name or "mac book" in lower_name) and "pro" not in lower_name and "[收購]" not in lower_name and "售出" not in lower_name and "北" in lower_name:
                 OO = tmp[i].split("<a href=\"")[1].split("</a>")[0].split("\">")
                 print "https://www.ptt.cc"+OO[0]+"\t"+OO[1]
         except:

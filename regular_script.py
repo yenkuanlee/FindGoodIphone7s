@@ -12,4 +12,4 @@ while True:
         exit(0)
 
     os.system("python ContentFilter.py tmp.txt")
-    time.sleep(5)
+    time.sleep(60)
